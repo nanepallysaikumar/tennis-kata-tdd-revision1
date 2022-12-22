@@ -12,6 +12,7 @@ const applicationConstants = {
   VALUE_FOUR: 4,
   DEUCE: "Deuce",
   ADVANTAGE_PLAYER_ONE: "Advantage Player One",
+  ADVANTAGE_PLAYER_TWO: "Advantage Player Two",
 };
 
 export { applicationConstants };
