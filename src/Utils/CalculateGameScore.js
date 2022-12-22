@@ -1,26 +1,19 @@
 import { applicationConstants } from "../Constants/applicationConstants";
-import { isPlayersScoreEqualsToZero } from "../Validators/scoreValidator";
+import {
+  isPlayersScoreEqualsToZero,
+  isScoreNotEqual,
+} from "../Validators/scoreValidator";
+import { scoreLookUp } from "./ScorelookUp";
 
-const {
-  LOVE_All,
-  FIFTEEN_LOVE,
-  VALUE_ONE,
-  VALUE_ZERO,
-  VALUE_TWO,
-  THIRTY_LOVE,
-} = applicationConstants;
+const { LOVE_All } = applicationConstants;
 
 const getGameScore = (playerOneScore, playerTwoScore) => {
   if (isPlayersScoreEqualsToZero(playerOneScore, playerTwoScore)) {
     return LOVE_All;
   }
 
-  if (playerOneScore === VALUE_ONE && playerTwoScore === VALUE_ZERO) {
-    return FIFTEEN_LOVE;
-  }
-
-  if (playerOneScore === VALUE_TWO && playerTwoScore === VALUE_ZERO) {
-    return THIRTY_LOVE;
+  if (isScoreNotEqual(playerOneScore, playerTwoScore)) {
+    return `${scoreLookUp[playerOneScore]} - ${scoreLookUp[playerTwoScore]}`;
   }
 };
 

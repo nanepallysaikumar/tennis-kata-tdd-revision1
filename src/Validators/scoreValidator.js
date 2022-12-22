@@ -5,4 +5,7 @@ const { VALUE_ZERO } = applicationConstants;
 const isPlayersScoreEqualsToZero = (playerOneScore, playerTwoScore) =>
   playerOneScore === VALUE_ZERO && playerTwoScore === VALUE_ZERO;
 
-export { isPlayersScoreEqualsToZero };
+const isScoreNotEqual = (playerOneScore, playerTwoScore) =>
+  playerOneScore !== playerTwoScore;
+
+export { isPlayersScoreEqualsToZero, isScoreNotEqual };
