@@ -7,6 +7,8 @@ const playerOne = {
   scores,
 };
 
+const playerTwo = Object.create(playerOne);
+
 function scores(times, player) {
   for (let count = 0; count < times; count++) {
     fireEvent.click(screen.getByTestId(player));
@@ -17,4 +19,4 @@ const gameScoreShouldBe = (expected) => {
   expect(screen.getByTestId(GAME_SCORE).textContent).toEqual(expected);
 };
 
-export { playerOne, gameScoreShouldBe };
+export { playerOne, playerTwo, gameScoreShouldBe };
