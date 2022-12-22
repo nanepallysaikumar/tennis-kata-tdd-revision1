@@ -53,3 +53,9 @@ test("When the individual points of both the players is “3”, then the runnin
   playerTwo.scores(3, PLAYER_TWO);
   gameScoreShouldBe(DEUCE);
 });
+
+test("When the individual points of both the players is greater than or equal to 4 and the running point of player one and player two are equal then the running score should be “Deuce”.", () => {
+  playerOne.scores(4, PLAYER_ONE);
+  playerTwo.scores(4, PLAYER_TWO);
+  gameScoreShouldBe(DEUCE);
+});

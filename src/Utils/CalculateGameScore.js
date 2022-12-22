@@ -3,7 +3,7 @@ import {
   isPlayersScoreEqualsToZero,
   isScoreNotEqual,
   isScoresEqual,
-  isScoreEqualToThree,
+  isScoreGreaterThanOrEqualToThree,
   isScoreLessThanThree,
 } from "../Validators/scoreValidator";
 import { scoreLookUp } from "./ScorelookUp";
@@ -28,7 +28,7 @@ const getGameScore = (playerOneScore, playerTwoScore) => {
 
   if (
     isScoresEqual(playerOneScore, playerTwoScore) &&
-    isScoreEqualToThree(playerOneScore, playerTwoScore)
+    isScoreGreaterThanOrEqualToThree(playerOneScore, playerTwoScore)
   ) {
     return DEUCE;
   }
