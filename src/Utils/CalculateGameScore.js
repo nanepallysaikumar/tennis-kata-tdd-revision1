@@ -1,37 +1,12 @@
-import { applicationConstants } from "../Constants/applicationConstants";
-import {
-  isPlayersScoreEqualsToZero,
-  isScoreNotEqual,
-  isScoresEqual,
-  isScoreGreaterThanOrEqualToThree,
-  isScoreLessThanThree,
-} from "../Validators/scoreValidator";
-import { scoreLookUp } from "./ScorelookUp";
-
-const { LOVE_All, DEUCE } = applicationConstants;
+import { gameRuleList } from "../gameRules/index";
 
 const getGameScore = (playerOneScore, playerTwoScore) => {
-  if (isPlayersScoreEqualsToZero(playerOneScore, playerTwoScore)) {
-    return LOVE_All;
+  for (const rule of gameRuleList) {
+    if (rule.isCriteriaMatched(playerOneScore, playerTwoScore)) {
+      return rule.getScore(playerOneScore, playerTwoScore);
+    }
   }
-
-  if (isScoreNotEqual(playerOneScore, playerTwoScore)) {
-    return `${scoreLookUp[playerOneScore]} - ${scoreLookUp[playerTwoScore]}`;
-  }
-
-  if (
-    isScoresEqual(playerOneScore, playerTwoScore) &&
-    isScoreLessThanThree(playerOneScore, playerTwoScore)
-  ) {
-    return `${scoreLookUp[playerOneScore]} - All`;
-  }
-
-  if (
-    isScoresEqual(playerOneScore, playerTwoScore) &&
-    isScoreGreaterThanOrEqualToThree(playerOneScore, playerTwoScore)
-  ) {
-    return DEUCE;
-  }
+  return;
 };
 
 export { getGameScore };
