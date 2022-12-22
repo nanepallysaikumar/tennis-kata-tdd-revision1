@@ -38,6 +38,9 @@ const isPlayerOneScoreLessThanPlayerTwo = (playerOneScore, playerTwoScore) =>
 const isAnyOfScoreGreaterThanEqualToFour = (playerOneScore, playerTwoScore) =>
   playerOneScore >= VALUE_FOUR || playerTwoScore >= VALUE_FOUR;
 
+const isAbsoluteDifferenceEqualToTwo = (playerOneScore, playerTwoScore) =>
+  Math.abs(playerOneScore - playerTwoScore) >= 2;
+
 export {
   isPlayersScoreEqualsToZero,
   isScoreNotEqual,
@@ -51,4 +54,5 @@ export {
   isPlayerOneScoreGreaterThanPlayerTwo,
   isPlayerOneScoreLessThanPlayerTwo,
   isAnyOfScoreGreaterThanEqualToFour,
+  isAbsoluteDifferenceEqualToTwo,
 };
