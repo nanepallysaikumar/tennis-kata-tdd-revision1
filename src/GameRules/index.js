@@ -4,6 +4,7 @@ import { deuce } from "./Deuce";
 import { advantagePlayerOne } from "./AdvantagePlayerOne";
 import { advantagePlayerTwo } from "./AdvantagePlayerTwo";
 import { winPlayerOne } from "./WinPlayerOne";
+import { winPlayerTwo } from "./WinPlayerTwo";
 
 const gameRuleList = [
   scoresLevel,
@@ -12,6 +13,7 @@ const gameRuleList = [
   advantagePlayerOne,
   advantagePlayerTwo,
   winPlayerOne,
+  winPlayerTwo,
 ];
 
 export { gameRuleList };
