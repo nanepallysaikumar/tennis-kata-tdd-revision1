@@ -9,7 +9,9 @@ const applicationConstants = {
   VALUE_ONE: 1,
   VALUE_TWO: 2,
   VALUE_THREE: 3,
+  VALUE_FOUR: 4,
   DEUCE: "Deuce",
+  ADVANTAGE_PLAYER_ONE: "Advantage Player One",
 };
 
 export { applicationConstants };

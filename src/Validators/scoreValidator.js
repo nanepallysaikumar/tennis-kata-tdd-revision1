@@ -1,6 +1,6 @@
 import { applicationConstants } from "../Constants/applicationConstants";
 
-const { VALUE_ZERO, VALUE_THREE } = applicationConstants;
+const { VALUE_ZERO, VALUE_THREE, VALUE_FOUR } = applicationConstants;
 
 const isPlayersScoreEqualsToZero = (playerOneScore, playerTwoScore) =>
   playerOneScore === VALUE_ZERO && playerTwoScore === VALUE_ZERO;
@@ -14,11 +14,23 @@ const isScoresEqual = (playerOneScore, playerTwoScore) =>
 const isScoreEqualToThree = (playerOneScore, playerTwoScore) =>
   playerOneScore === VALUE_THREE && playerTwoScore === VALUE_THREE;
 
+const isAnyOfScoreEqualToFour = (playerOneScore, playerTwoScore) =>
+  playerOneScore === VALUE_FOUR || playerTwoScore === VALUE_FOUR;
+
 const isScoreGreaterThanOrEqualToThree = (playerOneScore, playerTwoScore) =>
   playerOneScore >= VALUE_THREE && playerTwoScore >= VALUE_THREE;
 
 const isScoreLessThanThree = (playerOneScore, playerTwoScore) =>
   playerOneScore < VALUE_THREE && playerTwoScore < VALUE_THREE;
+
+const isScorelessThanFour = (playerOneScore, playerTwoScore) =>
+  playerOneScore < VALUE_FOUR && playerTwoScore < VALUE_FOUR;
+
+const isAbsoluteDifferenceEqualToOne = (playerOneScore, playerTwoScore) =>
+  Math.abs(playerOneScore - playerTwoScore) === 1;
+
+const isPlayerOneScoreGreaterThanPlayerTwo = (playerOneScore, playerTwoScore) =>
+  playerOneScore > playerTwoScore;
 
 export {
   isPlayersScoreEqualsToZero,
@@ -27,4 +39,8 @@ export {
   isScoreEqualToThree,
   isScoreLessThanThree,
   isScoreGreaterThanOrEqualToThree,
+  isScorelessThanFour,
+  isAbsoluteDifferenceEqualToOne,
+  isAnyOfScoreEqualToFour,
+  isPlayerOneScoreGreaterThanPlayerTwo,
 };

@@ -16,6 +16,7 @@ const {
   THIRTY_ALL,
   FORTY_THIRTY,
   DEUCE,
+  ADVANTAGE_PLAYER_ONE,
 } = testConstants;
 
 beforeEach(() => {
@@ -58,4 +59,10 @@ test("When the individual points of both the players is greater than or equal to
   playerOne.scores(4, PLAYER_ONE);
   playerTwo.scores(4, PLAYER_TWO);
   gameScoreShouldBe(DEUCE);
+});
+
+test("When the running point of player one is 4 and running point of player two is 3 then the running score should be “Advantage Player1”.", () => {
+  playerOne.scores(4, PLAYER_ONE);
+  playerTwo.scores(3, PLAYER_TWO);
+  gameScoreShouldBe(ADVANTAGE_PLAYER_ONE);
 });
