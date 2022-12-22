@@ -35,6 +35,9 @@ const isPlayerOneScoreGreaterThanPlayerTwo = (playerOneScore, playerTwoScore) =>
 const isPlayerOneScoreLessThanPlayerTwo = (playerOneScore, playerTwoScore) =>
   playerOneScore < playerTwoScore;
 
+const isAnyOfScoreGreaterThanEqualToFour = (playerOneScore, playerTwoScore) =>
+  playerOneScore >= VALUE_FOUR || playerTwoScore >= VALUE_FOUR;
+
 export {
   isPlayersScoreEqualsToZero,
   isScoreNotEqual,
@@ -47,4 +50,5 @@ export {
   isAnyOfScoreEqualToFour,
   isPlayerOneScoreGreaterThanPlayerTwo,
   isPlayerOneScoreLessThanPlayerTwo,
+  isAnyOfScoreGreaterThanEqualToFour,
 };

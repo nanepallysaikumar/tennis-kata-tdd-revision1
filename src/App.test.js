@@ -73,3 +73,9 @@ test("When the running point of player one is 3 and running point of player two 
   playerTwo.scores(4, PLAYER_TWO);
   gameScoreShouldBe(ADVANTAGE_PLAYER_TWO);
 });
+
+test("When the individual points of both the players is greater than equal to 5 and the Absolute difference between running point of player 1 and player 2 is equal to 1 then the running score should be “Advantage Player1” if the running point of player 1 is greater than running point of player2", () => {
+  playerOne.scores(6, PLAYER_ONE);
+  playerTwo.scores(5, PLAYER_TWO);
+  gameScoreShouldBe(ADVANTAGE_PLAYER_ONE);
+});
